@@ -41,7 +41,9 @@ if ((l5881397E_0 > 0))
 		/// @DnDVersion : 1
 		/// @DnDHash : 032980F5
 		/// @DnDParent : 5B899C1E
-		variable = 0;
+		/// @DnDArgument : "expr" "move_x * -1"
+		/// @DnDArgument : "var" "move_x"
+		move_x = move_x * -1;
 	}
 
 	/// @DnDAction : YoYo Games.Collisions.If_Object_At
@@ -50,15 +52,16 @@ if ((l5881397E_0 > 0))
 	/// @DnDParent : 5881397E
 	/// @DnDArgument : "x" "x + (25 * sign(move_x))"
 	/// @DnDArgument : "y" "y + 50"
-	/// @DnDArgument : "y_relative" "1"
 	/// @DnDArgument : "object" "obj_floor"
+	/// @DnDArgument : "not" "1"
 	/// @DnDSaveInfo : "object" "obj_floor"
-	var l7158C860_0 = instance_place(x + (25 * sign(move_x)), y + y + 50, [obj_floor]);
-	if ((l7158C860_0 > 0))
+	var l7158C860_0 = instance_place(x + (25 * sign(move_x)), y + 50, [obj_floor]);
+	if (!(l7158C860_0 > 0))
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 4A4F76FF
+		/// @DnDComment : flips movement
 		/// @DnDParent : 7158C860
 		/// @DnDArgument : "expr" "move_x * -1"
 		/// @DnDArgument : "var" "move_x"
